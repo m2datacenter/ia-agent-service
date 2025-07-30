@@ -1,0 +1,32 @@
+{
+  "name": "ia-agent-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main/server.js",
+    "dev": "ts-node --files src/main/server.ts",
+    "test": "jest --passWithNoTests --runInBand --bail",
+    "test-unit": "jest --passWithNoTests --runInBand --watch --onlyChanged",
+    "test-clear": "jest --clearCache",
+    "test:coverage": "npm t -- --coverage",
+    "build": "rimraf dist && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongodb": "^6.18.0",
+    "redis": "^5.6.1"
+  }
+}
