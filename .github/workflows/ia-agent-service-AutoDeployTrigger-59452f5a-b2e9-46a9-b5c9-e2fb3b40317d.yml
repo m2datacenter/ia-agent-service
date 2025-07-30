@@ -42,7 +42,7 @@ jobs:
           registryPassword: ${{ secrets.IAAGENTSERVICE_REGISTRY_PASSWORD }}
           containerAppName: ia-agent-service
           resourceGroup: rg-container-app-botsoluti
-          imageToBuild: registry.hub.docker.com/ia-agent-service:${{ github.sha }}
+          imageToBuild: registry.hub.docker.com/mmoreirasouza/ia-agent-service:${{ github.sha }}
           _buildArgumentsKey_: |
             _buildArgumentsValues_
 
