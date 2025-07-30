@@ -20,7 +20,7 @@ async function start() {
 
   const app = getExpressApplication()
 
-  const APP_VERSION = '1.0.0 - 2025-07-29'
+  const APP_VERSION = '1.0.1 - 2025-07-29'
 
   const validateAccessTokenService = new ValidateAccessTokenService()
   const authorizationMiddleware = new AuthorizationMiddleware(validateAccessTokenService)
@@ -38,13 +38,13 @@ async function start() {
 
   // PRIVATE ROUTES
   app.get('/private/check-health', (_req, res) => {
-    res.status(200).json({ msg: 'ok', version: APP_VERSION, name: 'bot-service' })
+    res.status(200).json({ msg: 'ok', version: APP_VERSION, name: 'ia-agent-service' })
   })
   // app.use('/private', getBotExpressRouter._getRouter())
 
   // PUBLIC ROUTES
   app.get('/public/check-health', (_req, res) => {
-    res.status(200).json({ msg: 'ok', version: APP_VERSION, name: 'bot-service' })
+    res.status(200).json({ msg: 'ok', version: APP_VERSION, name: 'ia-agent-service' })
   })
 
   app.use('/public', createMessageExpressRouter.getRouter())
