@@ -24,4 +24,4 @@ COPY --from=dev /usr/src/app/dist ./dist
 
 EXPOSE 80
 
-CMD ["node", "dist/main/index.js"]
+CMD ["node", "dist/main/server.js"]

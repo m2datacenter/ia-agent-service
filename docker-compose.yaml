@@ -1,28 +1,22 @@
 services:
-  bot-service:
-    image: bot-service
-    container_name: bot-service
+  ia-agent-service:
+    image: ia-agent-service
+    container_name: ia-agent-service
     environment:
-      - PORT=8095
+      - PORT=8102
       - NODE_ENV=development
       - MONGO_URI=mongodb+srv://marcelomoreirasouza:9lN1u5TMC2yKsU32@botsoluti.q4mfu.mongodb.net/botsoluti-dev?retryWrites=true&w=majority
       - REDIS_URI=redis://localhost:6379
       - REDIS_DB=1
       - AUTH_SERVICE_HOST=http://localhost:8091/private
       - LOGGER_SERVICE_HOST=http://localhost:8070
-      - META_SERVICE_HOST=http://localhost:8099/private
+      - BOT_SERVICE_HOST=http://localhost:8095/private
+      - CONTACT_SERVICE_HOST=http://localhost:8096/private
     ports:
-      - "8095:8095"
+      - "8102:8102"
     network_mode: "host"
 
-
-
-# docker build . -t bot-service
-# docker run -d -p 8095:80 -e PORT='80' -e MONGO_URI='mongodb+srv://marcelomoreirasouza:9lN1u5TMC2yKsU32@botsoluti.q4mfu.mongodb.net/botsoluti-dev?retryWrites=true&w=majority' -e REDIS_URI='redis://192.168.0.12:6379' --name='bot-service' bot-service
-# docker run -d --network=host -e PORT='8095' -e NODE_ENV='development' -e MONGO_URI='mongodb+srv://marcelomoreirasouza:9lN1u5TMC2yKsU32@botsoluti.q4mfu.mongodb.net/botsoluti-dev?retryWrites=true&w=majority' -e REDIS_URI='redis://192.168.0.12:6379' -e REDIS_DB='1' --name='bot-service' bot-service
-
-
-# docker build . -t bot-service
-# docker tag bot-service mmoreirasouza/bot-service
-# docker push mmoreirasouza/bot-service
-# no servidor para atualizar a imagem: docker pull mmoreirasouza/bot-service
+# docker build . -t ia-agent-service
+# docker tag ia-agent-service mmoreirasouza/ia-agent-service
+# docker push mmoreirasouza/ia-agent-service
+# no servidor para atualizar a imagem: docker pull mmoreirasouza/ia-agent-service
