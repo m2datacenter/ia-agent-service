@@ -112,7 +112,8 @@ export class CreateMessageExpressRouter {
             model_id: openaiAssistantData.model_id,
             instructions: openaiAssistantData.instructions,
             human_agent_triggers: openaiAssistantData.human_agent_triggers,
-            mcp_tools: openaiAssistantData.mcp_tools
+            mcp_tools: openaiAssistantData.mcp_tools,
+            contact_fields_to_update: openaiAssistantData.contact_fields_to_update
           },
           account: { id: accountId, name: accountName },
           event_expire_data: eventExpireData,
